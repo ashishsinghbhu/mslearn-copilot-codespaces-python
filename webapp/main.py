@@ -18,6 +18,11 @@ class Body(BaseModel):
     length: Union[int, None] = 20
 
 
+@app.get('/health')
+def health():
+    return {'status': 'healthy'}
+
+
 @app.get('/')
 def root():
     html_path = join(static_path, "index.html")
